@@ -26,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class GeoSurveyClient {
     private static Retrofit retrofit=null;
     public static OkHttpClient client;
-    public static final String BASE_URL = "https://ids-survey.herokuapp.com/api/v1/";
+    public static final String BASE_URL = "https://ids-survey.cfapps.io/api/v1/";
 
 //    public static Retrofit getClient(String baseUrl)
 //    {

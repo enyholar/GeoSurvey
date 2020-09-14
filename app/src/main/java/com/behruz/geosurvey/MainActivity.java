@@ -6,15 +6,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.text.DynamicLayout;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.behruz.geosurvey.adapter.SurveyListAdapter;
 import com.behruz.geosurvey.api.GeoSurveyClient;
@@ -49,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         binding.toolbar.setBackgroundColor(Color.parseColor("#ffffff"));
         binding.toolbar.setTitleTextColor(Color.BLACK);
         binding.navView.setNavigationItemSelectedListener(this);
-        setValueToHeader();
+      //  setValueToHeader();
         initAdapter();
         fetchSurvey();
     }
@@ -65,7 +62,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         adapter= new SurveyListAdapter(getApplicationContext(), new SurveyListAdapter.ClickListner() {
             @Override
             public void onItemClick(SurveysItem model, int position) {
-
+                Intent intent = new Intent(MainActivity.this,SurveyActivity.class);
+                intent.putExtra("model",model);
+                startActivity(intent);
             }
         });
         LinearLayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
@@ -98,25 +97,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-//    private void createLayoutDynamically(int n) {
-//
-//        for (int i = 0; i < n; i++) {
-//            Button myButton = new Button(this);
-//            myButton.setText("Button :"+i);
-//            myButton.setId(i);
-//            final int id_ = myButton.getId();
-//
-//            LinearLayout layout = (LinearLayout) findViewById(R.id.myDynamicLayout);
-//            layout.addView(myButton);
-//
-//            myButton.setOnClickListener(new View.OnClickListener() {
-//                public void onClick(View view) {
-//                    Toast.makeText(DynamicLayout.this,
-//                            "Button clicked index = " + id_, Toast.LENGTH_SHORT)
-//                            .show();
-//                }
-//            });
-//        }
-//
-//    }
+
 }

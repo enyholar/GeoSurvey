@@ -10,7 +10,6 @@ import androidx.databinding.DataBindingUtil;
 import com.behruz.geosurvey.api.GeoSurveyClient;
 import com.behruz.geosurvey.api.GeoSurveyService;
 import com.behruz.geosurvey.databinding.ActivityLoginBinding;
-import com.behruz.geosurvey.model.SurveyListResponse;
 import com.behruz.geosurvey.model.UserResponse;
 import com.behruz.geosurvey.utils.PreferenUtil;
 

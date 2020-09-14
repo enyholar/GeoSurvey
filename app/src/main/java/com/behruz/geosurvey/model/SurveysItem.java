@@ -2,25 +2,30 @@ package com.behruz.geosurvey.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class SurveysItem{
+import java.io.Serializable;
+
+public class SurveysItem implements Serializable {
 
 	@SerializedName("survey_url")
 	private String surveyUrl;
 
+	@SerializedName("id")
+	private String id;
+
 	@SerializedName("description")
-	private Object description;
+	private String description;
 
 	@SerializedName("title")
 	private String title;
 
 	@SerializedName("status")
-	private Object status;
+	private String status;
 
 	public String getSurveyUrl(){
 		return surveyUrl;
 	}
 
-	public Object getDescription(){
+	public String getDescription(){
 		return description;
 	}
 
@@ -28,7 +33,15 @@ public class SurveysItem{
 		return title;
 	}
 
-	public Object getStatus(){
+	public String getStatus(){
 		return status;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }
